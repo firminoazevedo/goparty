@@ -1,26 +1,27 @@
 package br.com.firmino.teste.models;
 
-public class Evento {
-    private String nome;
-    private String descricao;
+public class Event {
+    private String title;
+    private String place;
+
     private String local;
     private String data;
     private String horario;
 
-    public String getNome() {
-        return nome;
+    public String getTitle() {
+        return title;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getPlace() {
+        return place;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     public String getLocal() {
