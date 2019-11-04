@@ -55,7 +55,7 @@
 
     <EditText
         android:id="@+id/editTextUserPass"
-        android:layout_width="326dp"
+        android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
