@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1091864596878",
+    "firebase_url": "https://goparty-42eb5.firebaseio.com",
+    "project_id": "goparty-42eb5",
+    "storage_bucket": "goparty-42eb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091864596878:android:7e6e63fe4e930d640f54df",
+        "android_client_info": {
+          "package_name": "br.com.firmino.teste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091864596878-387r7iak805nv8re2sjnldcr14fe8mld.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.firmino.teste",
+            "certificate_hash": "18eabea3a8248403f4e289fad38e4d7f80b67839"
+          }
+        },
+        {
+          "client_id": "1091864596878-vcc05f0g6hnmc6739ll142k7qfe5j3lr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqE2e07tjRlQSpCueFrVUJBiOIW3bNJhY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091864596878-vcc05f0g6hnmc6739ll142k7qfe5j3lr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
