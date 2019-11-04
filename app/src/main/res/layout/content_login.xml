@@ -10,7 +10,7 @@
     tools:showIn="@layout/activity_login">
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editTextEmail"
         android:layout_marginLeft="28dp"
         android:layout_marginRight="28dp"
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:backgroundTint="@color/colorTint"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Name"
+        android:hint="E-mail"
         android:textColorHint="#fff"
         android:textColor="#FFFDFD"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editTextPass"
         android:layout_marginLeft="28dp"
         android:layout_marginRight="28dp"
         android:layout_width="match_parent"
@@ -55,10 +55,10 @@
         android:textColor="#F8F2F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonLogin"
         android:layout_marginLeft="28dp"
         android:layout_marginRight="28dp"
         android:layout_width="match_parent"
@@ -69,7 +69,7 @@
         android:background="@drawable/buttonshape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPass" />
 
     <Button
         android:id="@+id/button3"
@@ -83,7 +83,7 @@
         android:background="@drawable/buttonshape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <ImageView
         android:id="@+id/imageView4"
