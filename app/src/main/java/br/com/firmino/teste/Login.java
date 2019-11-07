@@ -39,6 +39,7 @@ public class Login extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().hide();
 
         findViewById(R.id.buttonLogin).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +71,12 @@ public class Login extends AppCompatActivity {
 
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("Realizando login ...");
+
+
+        if(auth.getCurrentUser() != null){
+            startActivity(new Intent(Login.this, MainActivity.class));
+            finish();
+        }
 
     }
 

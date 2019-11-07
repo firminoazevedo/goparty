@@ -20,6 +20,11 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,12 +44,17 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageButton imgLogo;
 
+    private DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().hide();
+
         firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if (user != null) {
@@ -60,14 +70,19 @@ public class MainActivity extends AppCompatActivity {
         imgLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
+
+                startActivity(new Intent(MainActivity.this, Profile.class));
+
+                /*try {
                     FirebaseAuth.getInstance().signOut();
                     // signed out
                 } catch (Exception e){
                     // an error
-                }
+                }*/
             }
         });
+
+
 
         /*btnCadFesta = findViewById(R.id.btnCadastrar);
         btnLogin = findViewById(R.id.btnLogin);
@@ -101,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.rvEvents);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
+        /*
         Event e1 = new Event();
         e1.setTitle("Teste1");
         e1.setPlace("Picos");
@@ -127,9 +142,32 @@ public class MainActivity extends AppCompatActivity {
         feedItem.add(e3);
         feedItem.add(e4);
         feedItem.add(e5);
-
         mAdapter = new AdapterEvents(MainActivity.this, feedItem);
         mRecyclerView.setAdapter(mAdapter);
+
+         */
+
+
+
+        //child(new Preferences(MyJobs.this).getCompany().getId()).
+        databaseReference.child("events").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                feedItem.clear();
+                for(DataSnapshot obg: dataSnapshot.getChildren()){
+                    Event e = obg.getValue(Event.class);
+                    e.setId(obg.getKey());
+                    feedItem.add(e);
+                }
+                mAdapter = new AdapterEvents(MainActivity.this, feedItem);
+                mRecyclerView.setAdapter(mAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

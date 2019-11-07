@@ -32,6 +32,8 @@ public class RegisterUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
 
+        getSupportActionBar().setTitle("Registrar-se");
+
         name = findViewById(R.id.editTextUserName);
         email = findViewById(R.id.editTextUserEmail);
         pass = findViewById(R.id.editTextUserPass);
