@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -42,7 +43,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }*/
 
-        btnCadFesta = findViewById(R.id.btnCadastrar);
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user != null) {
+            Toast.makeText(getApplicationContext(), "Bem vindo de volta " + user.getEmail() + "!", Toast.LENGTH_LONG).show();
+        } else {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+            finish();
+        }
+
+        /*btnCadFesta = findViewById(R.id.btnCadastrar);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
 
@@ -68,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, RegisterUser.class));
             }
-        });
+        });*/
 
 
         mRecyclerView = findViewById(R.id.rvEvents);
