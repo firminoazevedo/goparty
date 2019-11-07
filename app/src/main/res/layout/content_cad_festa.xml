@@ -10,7 +10,7 @@
     tools:showIn="@layout/activity_cad_festa">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edtTitle"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edtLocal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -46,10 +46,10 @@
         android:textColor="#FCFBFB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/edtTitle" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edtHorario"
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:layout_marginStart="32dp"
@@ -65,10 +65,10 @@
         android:textColor="#FCF9F9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/edtData" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edtData"
         android:layout_width="match_parent"
         android:layout_height="51dp"
         android:layout_marginStart="32dp"
@@ -84,7 +84,7 @@
         android:textColor="#FAF7F7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/edtLocal" />
 
     <Button
         android:id="@+id/button"
@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDescricao" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -114,7 +114,7 @@
         app:srcCompat="@drawable/ic_logo_app" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/edtDescricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -130,5 +130,5 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/edtHorario" />
 </androidx.constraintlayout.widget.ConstraintLayout>

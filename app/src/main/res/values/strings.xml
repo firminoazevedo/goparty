@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Teste</string>
     <string name="title_activity_cad_festa">CadFesta</string>
+    <string name="title_exit">Exit</string>
     <string name="title_activity_login">Login</string>
 </resources>

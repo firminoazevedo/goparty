@@ -1,12 +1,24 @@
 package br.com.firmino.teste.models;
 
 public class Event {
+
+    private int id;
     private String title;
     private String place;
-
     private String local;
     private String data;
     private String horario;
+
+    public Event() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -47,4 +59,6 @@ public class Event {
     public void setHorario(String horario) {
         this.horario = horario;
     }
+
+
 }

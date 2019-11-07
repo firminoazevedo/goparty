@@ -1,5 +1,6 @@
 package br.com.firmino.teste;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,11 +8,16 @@ import br.com.firmino.teste.adapter.AdapterEvents;
 import br.com.firmino.teste.models.Event;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -31,17 +37,14 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
     private Button btnRegister;
 
+    private ImageButton imgLogo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        /*FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user!=null) {
-            Intent intent = new Intent(MainActivity.this, Login.class);
-            startActivity(intent);
-        }*/
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if (user != null) {
@@ -51,6 +54,20 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
+        imgLogo = findViewById(R.id.imgLogo);
+
+        imgLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    FirebaseAuth.getInstance().signOut();
+                    // signed out
+                } catch (Exception e){
+                    // an error
+                }
+            }
+        });
 
         /*btnCadFesta = findViewById(R.id.btnCadastrar);
         btnLogin = findViewById(R.id.btnLogin);
@@ -113,5 +130,17 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter = new AdapterEvents(MainActivity.this, feedItem);
         mRecyclerView.setAdapter(mAdapter);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CadFesta.class));
+            }
+        });
+
+
     }
+
+
 }
