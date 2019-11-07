@@ -48,16 +48,16 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        /*
 
-        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.btnUserReg).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Login.this, Events.class));
+                startActivity(new Intent(Login.this, RegisterUser.class));
             }
         });
 
-         */
+
 
         init();
     }
