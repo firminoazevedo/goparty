@@ -39,6 +39,7 @@ public class Login extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().hide();
 
         findViewById(R.id.buttonLogin).setOnClickListener(new View.OnClickListener() {
             @Override
