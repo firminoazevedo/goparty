@@ -72,6 +72,12 @@ public class Login extends AppCompatActivity {
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("Realizando login ...");
 
+
+        if(auth.getCurrentUser() != null){
+            startActivity(new Intent(Login.this, MainActivity.class));
+            finish();
+        }
+
     }
 
 

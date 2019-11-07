@@ -21,6 +21,7 @@ import com.google.gson.Gson;
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
+import br.com.firmino.teste.CadFesta;
 import br.com.firmino.teste.R;
 import br.com.firmino.teste.models.Event;
 
@@ -64,6 +65,16 @@ public class AdapterEvents extends RecyclerView.Adapter<AdapterEvents.MyViewHold
 
         holder.mTextViewTitle.setText(Html.fromHtml(item.getTitle()));
         holder.mTextViewPlace.setText(Html.fromHtml(item.getPlace()));
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, CadFesta.class);
+                i.putExtra("events", new Gson().toJson(item));
+                context.startActivity(i);
+            }
+        });
 
         /*
         holder.itemView.setOnClickListener(new View.OnClickListener() {
