@@ -1,6 +1,7 @@
 package br.com.firmino.teste;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,20 +28,13 @@ public class CadFesta extends AppCompatActivity {
 
     private ProgressDialog mProgressDialog;
 
-    private Button button;
+    private Button button, backToHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cad_festa);
+        setContentView(R.layout.activity_profile);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
-        getSupportActionBar().setTitle("Cadastrar Evento");
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         init();
@@ -138,11 +132,11 @@ public class CadFesta extends AppCompatActivity {
 
         button = findViewById(R.id.button);
 
-        title = findViewById(R.id.edtTitle);
-        place = findViewById(R.id.edtDescricao);
-        local = findViewById(R.id.edtLocal);
-        data = findViewById(R.id.edtData);
-        horario = findViewById(R.id.edtHorario);
+        title = findViewById(R.id.edtTitle11);
+        place = findViewById(R.id.edtDescricao1);
+        local = findViewById(R.id.edtLocal1);
+        data = findViewById(R.id.edtData1);
+        horario = findViewById(R.id.edtHorario1);
     }
 
 

@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".CadFesta">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="357dp"
+        android:layout_width="418dp"
+        android:layout_height="336dp"
         android:layout_centerInParent="true"
         android:background="@color/colorPrimary"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-5dp">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -29,13 +29,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="182dp"
+            android:layout_height="173dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="0dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
-            app:cardCornerRadius="50dp"
+            app:cardCornerRadius="40dp"
             app:cardPreventCornerOverlap="false"
             app:cardUseCompatPadding="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,34 +49,36 @@
                 android:padding="32dp" />
         </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
-            android:text="Hello World"
-            android:textSize="28dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.402"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-        <TextView
+        <EditText
+            android:id="@+id/edtTiltle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:text="Hello World"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.402"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <EditText
+            android:id="@+id/edtLocal1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:text="Taverna Geek"
             android:textSize="12dp"
             android:textStyle="bold"
+            android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.423"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/edtTiltle1" />
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -92,12 +93,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/edtBackToHome"
         style="@style/profileStyledBackButton"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="308dp"
         android:text="Voltar"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout"
         tools:ignore="MissingConstraints" />
@@ -107,61 +109,62 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
         android:padding="2dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/edtTitle11"
         app:srcCompat="@drawable/ic_bubble_chart_black_24dp" />
 
-    <TextView
-        android:id="@+id/textView4"
+    <EditText
+        android:id="@+id/edtTitle11"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         android:hint="Nome do evento"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/edtBackToHome" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edtHorario1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:hint="Horário"
         app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/edtLocal11" />
 
-    <TextView
-        android:id="@+id/textView7"
+    <EditText
+        android:id="@+id/edtData1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:text="data "
+        android:layout_marginTop="8dp"
+        android:hint="Data "
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/edtHorario1" />
 
-    <TextView
-        android:id="@+id/textView8"
+    <EditText
+        android:id="@+id/edtDescricao1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:text="Descricao"
+        android:layout_marginTop="44dp"
+        android:hint="Descricao"
         app:layout_constraintStart_toEndOf="@+id/imageView11"
-        app:layout_constraintTop_toTopOf="@+id/textView7" />
+        app:layout_constraintTop_toTopOf="@+id/edtData1" />
 
-    <TextView
-        android:id="@+id/textView5"
+    <EditText
+        android:id="@+id/edtLocal11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="8dp"
         android:hint="Local"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/edtTitle11" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -180,7 +183,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@color/colorPrimary"
         android:padding="2dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -204,12 +207,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:background="@color/colorPrimary"
         android:padding="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
         app:srcCompat="@drawable/ic_access_time_black_24dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="159dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/buttonshape"
+        android:text="Cadastrar"
+        android:textColor="#ddd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtDescricao1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
